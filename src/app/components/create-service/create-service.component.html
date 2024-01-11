@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="card mt-4 col-6">
+    <div class="card-header">
+      Create New Account
+    </div>
+    <div class="card-body">
+      <form [formGroup]="createServiceForm" (ngSubmit)="handleCreateService()" >
+        <div class="mb-3">
+          <label class="form-label">Name <span class="text-danger">*</span></label>
+          <input formControlName="name" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Short description <span class="text-danger">*</span></label>
+          <textarea formControlName="shortDescription" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Long description <span class="text-danger">*</span></label>
+          <textarea formControlName="longDescription" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contact email <span class="text-danger">*</span></label>
+          <input formControlName="contactEmail" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contact phone <span class="text-danger">*</span></label>
+          <input type="text" formControlName="contactPhone" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Category <span class="text-danger">*</span></label>
+          <select formControlName="categoryId" class="custom-select">
+            <option value="null">Choose category ...</option>
+            <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image <span class="text-danger">*</span></label>
+          <input (change)="selectFile($event)" formControlName="image" type="file" class="form-control-file">
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-block">Create Service</button>
+        </div>
+      </form >
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div *ngIf="service" class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h5 class="card-title">{{service.name}}</h5>
+        <div>
+          <i class="bi bi-star-fill mr-1 text-warning"></i>
+          <strong class="text-warning">{{service.reviewsAverage | number : '1.0-1'}}</strong> / <strong class="text-warning">{{service.reviewsNumbers}}</strong>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <img src="{{service.imagesUrls[0]}}" alt="{{service.name}}" width="500px" height="300px">
+      </div>
+      <p class="card-text">Category <strong>{{service.category.name}}</strong></p>
+      <p class="card-text mt-2">{{service.shortDescription}}</p>
+      <p class="card-text mt-2">{{service.longDescription}}</p>
+      <h5 class="mb-3">Contact infos</h5>
+      <p class="card-text">Email : {{service.contactEmail}}</p>
+      <p class="card-text">Phone : {{service.contactPhone}}</p>
+    </div>
+  </div>
+</div>

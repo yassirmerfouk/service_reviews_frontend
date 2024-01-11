@@ -1,0 +1,36 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <form [formGroup]="filterForm" class="d-flex" (ngSubmit)="handleFilter()">
+      <div *ngIf="categories" class="input-group mb-3 col-10">
+        <select formControlName="category" class="custom-select">
+          <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-primary btn-block">Filter</button>
+      </div>
+    </form>
+
+    <div *ngIf="services" class="row">
+      <div *ngFor="let service of services" class="col-md-4" (click)="handleToService(service.id)">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="{{service.imagesUrls[0]}}">
+          <div class="card-body">
+            <p><strong>{{service.name}}</strong></p>
+            <div class="d-flex justify-content-between">
+              <p>Category <strong>{{service.category.name}}</strong></p>
+              <div>
+                <i class="bi bi-star-fill mr-1 text-warning"></i>
+                <strong class="text-warning">{{service.reviewsAverage | number : '1.0-1'}}</strong> / <strong class="text-warning">{{service.reviewsNumbers}}</strong>
+              </div>
+            </div>
+            <p class="card-text">{{service.shortDescription}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

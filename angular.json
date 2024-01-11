@@ -25,9 +25,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/js/popper.min.js",
+              "src/js/bootstrap.min.js",
+              "src/js/holder.min.js"
+            ]
           },
           "configurations": {
             "production": {
