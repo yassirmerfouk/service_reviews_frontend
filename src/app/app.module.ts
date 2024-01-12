@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { ServiceComponent } from './components/service/service.component';
 import { CreateServiceComponent } from './components/create-service/create-service.component';
+import { MyServicesComponent } from './components/my-services/my-services.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CreateServiceComponent } from './components/create-service/create-servi
     ServicesComponent,
     CreateAccountComponent,
     ServiceComponent,
-    CreateServiceComponent
+    CreateServiceComponent,
+    MyServicesComponent
   ],
   imports: [
     BrowserModule,

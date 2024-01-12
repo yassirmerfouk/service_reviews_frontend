@@ -7,6 +7,7 @@ import {ServiceComponent} from "./components/service/service.component";
 import {CreateServiceComponent} from "./components/create-service/create-service.component";
 import {authenticationGuard} from "./guard/authentication.guard";
 import {businessAuthorizationGuard} from "./guard/business-authorization.guard";
+import {MyServicesComponent} from "./components/my-services/my-services.component";
 
 const routes: Routes = [
   {path : "", component : ServicesComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path : "services", component : ServicesComponent},
   {path : "service/:id", component : ServiceComponent},
   {path : "create-account", component : CreateAccountComponent},
-  {path : "create-service", component : CreateServiceComponent, canActivate : [authenticationGuard, businessAuthorizationGuard]}
+  {path : "create-service", component : CreateServiceComponent, canActivate : [authenticationGuard, businessAuthorizationGuard]},
+  {path : "my-services", component : MyServicesComponent, canActivate :[authenticationGuard, businessAuthorizationGuard]}
 ];
 
 @NgModule({

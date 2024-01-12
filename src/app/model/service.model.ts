@@ -1,4 +1,4 @@
-import {BusinessAccountResponse} from "./account.model";
+import {BusinessAccountResponse, PersonnelAccountResponse} from "./account.model";
 
 export interface ServiceResponse{
   id : number,
@@ -30,3 +30,18 @@ export interface ServiceRequest{
   businessAccountId : number
 }
 
+export interface ReviewResponse{
+  id : number,
+  serviceId : number,
+  personnelAccountId : number,
+  grade : number,
+  comment : string,
+  personnelAccount : PersonnelAccountResponse
+}
+
+export interface ReviewRequest{
+  serviceId : number,
+  personnelAccountId : number,
+  grade : number,
+  comment : string
+}

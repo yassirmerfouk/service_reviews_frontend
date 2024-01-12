@@ -31,7 +31,6 @@
             ],
             "scripts": [
               "src/js/popper.min.js",
-              "src/js/bootstrap.min.js",
               "src/js/holder.min.js"
             ]
           },

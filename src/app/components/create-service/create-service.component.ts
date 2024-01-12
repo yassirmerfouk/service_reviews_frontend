@@ -58,7 +58,6 @@ export class CreateServiceComponent implements OnInit {
 
   public handleCreateService() : void{
     let service : ServiceRequest = this.createServiceForm.value;
-
     service.businessAccountId = +this.stateService.authState.id;
     this.serviceService.createService(service, this.image).subscribe(
       {
