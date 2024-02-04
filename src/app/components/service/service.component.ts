@@ -88,8 +88,10 @@ export class ServiceComponent implements OnInit{
       {
         next : () => {
           this.didReview = true;
-          this.getServiceReviews(this.serviceId);
-          this.getService(this.serviceId);
+          setTimeout(()=>{
+            this.getServiceReviews(this.serviceId);
+            this.getService(this.serviceId);
+          }, 2000)
         },
         error : (error) => {
           console.log(error);

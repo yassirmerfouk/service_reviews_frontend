@@ -8,7 +8,7 @@ import {CategoryResponse} from "../model/service.model";
 })
 export class CategoryService {
 
-  private apiUrl = "http://localhost:8080/SERVICES-MICROSERVICE/categories";
+  private apiUrl = "http://localhost:8082/categories";
   constructor(private httpClient : HttpClient) { }
 
   public getAllCategories() : Observable<Array<CategoryResponse>> {
